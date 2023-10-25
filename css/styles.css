@@ -13,14 +13,38 @@ html{
 
 body{
     font-size: 16px;
+    font-family: handlee;
 }
 
 .title{
     text-align: center;
     font-size: 3.8rem;
     font-family: krub, handlee, solitreo;
+    color: var(--secundario);
 }
 
 .title span{
     font-size: 2rem;
+}
+
+.container{
+    width:120rem;
+    margin: 0 auto;
+}
+
+header nav ul{
+    display: flex;
+    height: auto;
+    /*List style none elimina los puntos de la lista*/
+    List-style: none;
+    justify-content: center;
+    align-items: center;
+}
+
+header nav ul li{
+    padding: 0 10;
+}
+
+.main_browsing{
+    background-color: var(--secundario);
 }
