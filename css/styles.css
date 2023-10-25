@@ -1,1 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Krub&display=swap');
 
+:root{
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --primario: #ffc107;
+    --secundario: #0097a7;
+    --gris: #757575;
+}
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 16px;
+}
+
+.title{
+    text-align: center;
+    font-size: 3.8rem;
+    font-family: krub, handlee, solitreo;
+}
+
+.title span{
+    font-size: 2rem;
+}
