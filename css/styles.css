@@ -9,42 +9,121 @@
 }
 html{
     font-size: 62.5%;
+    box-sizing: border-box;
+    *. *:before, *:after{
+        box-sizing: inherit;
+    }
 }
 
 body{
     font-size: 16px;
-    font-family: handlee;
+    font-family: krub, sans-serif;
+    font-weight: bold;
 }
 
-.title{
+/*Tipografía*/
+h1{
+    font-size: 3.8rem;
+}
+h2{
+    font-size: 2.8rem;
+}
+h3{
+    font-size: 1.8rem;
+}
+
+h3, h2, h1{
+    text-align: center;
+}
+
+/*.title{
     text-align: center;
     font-size: 3.8rem;
     font-family: krub, handlee, solitreo;
-    color: var(--secundario);
-}
+}*/
 
 .title span{
     font-size: 2rem;
 }
 
 .container{
-    width:120rem;
     margin: 0 auto;
-}
-
-header nav ul{
-    display: flex;
-    height: auto;
-    /*List style none elimina los puntos de la lista*/
-    List-style: none;
-    justify-content: center;
-    align-items: center;
-}
-
-header nav ul li{
-    padding: 0 10;
+    text-align: center;
 }
 
 .main_browsing{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     background-color: var(--secundario);
+    font-weight: bold;
+    font-size: 2 rem;
+}
+
+.main_browsing a{
+    padding: 1rem;
+    color: var(--blanco);
+    text-decoration: none;
+}
+
+.main_browsing a:hover{
+    background-color: var(--primario);
+    color: var(--obscuro);
+}
+
+@media (min-width: 768px){
+    .main_browsing{
+        flex-direction: row;
+    }
+}
+
+/*Hero Styles*/
+.hero{
+    background-image:url(../images/hero.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    height:450px;
+    position:relative;
+}
+
+.container-hero{
+    position: absolute;
+    background-color: rgba(0,0,0,0.7);
+    width: 100%;
+    height:100%;
+
+    /*Alinear*/
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-hero p, .container-hero h2{
+    color: var(--blanco);
+}
+
+.location{
+    display:flex;
+    align-items: flex-end;
+}
+
+.contactMe_button{
+    background-color: var(--secundario);
+    text-decoration: none;
+    color: var(--blanco);
+    border-radius: 1rem;
+    padding: 1rem 3rem;
+    margin-top: 3rem;
+    font-weight: bold;
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-align: center;
+    width: 90%;
+}
+
+@media (min-width 768px){
+    .contactMe_button{
+        width: auto;
+    }
 }
