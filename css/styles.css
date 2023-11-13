@@ -6,10 +6,12 @@
     --primario: #ffc107;
     --secundario: #0097a7;
     --gris: #757575;
+    --grisClaro: #dfe9f3;
 }
 html{
     font-size: 62.5%;
     box-sizing: border-box;
+    background-image: linear-gradient(to right, var(--blanco)0%, var(--grisClaro)100%);
     *. *:before, *:after{
         box-sizing: inherit;
     }
@@ -84,6 +86,7 @@ h3, h2, h1{
     background-size:cover;
     height:450px;
     position:relative;
+    margin-botton: 2rem;
 }
 
 .container-hero{
@@ -101,6 +104,7 @@ h3, h2, h1{
 
 .container-hero p, .container-hero h2{
     color: var(--blanco);
+    font-weight: bold;
 }
 
 .location{
@@ -110,20 +114,81 @@ h3, h2, h1{
 
 .contactMe_button{
     background-color: var(--secundario);
-    text-decoration: none;
-    color: var(--blanco);
+
     border-radius: 1rem;
     padding: 1rem 3rem;
     margin-top: 3rem;
+
+    text-decoration: none;
+    color: var(--blanco);
+
+
     font-weight: bold;
     font-size: 2rem;
     text-transform: uppercase;
     text-align: center;
-    width: 90%;
+    width: 15rem;
 }
 
-@media (min-width 768px){
+.shadowxd {
+    box-shadow: -4px 8px 46px 12px rgba(0,0,0,0.75);
+-webkit-box-shadow: -4px 8px 46px 12px rgba(0,0,0,0.75);
+-moz-box-shadow: -4px 8px 46px 12px rgba(0,0,0,0.75);
+background-color: var(--blanco);
+padding: 2rem;
+border-radius: 1rem;
+
+margin: auto;
+width: 80%;
+margin-top: 2rem;
+}
+
+main{
+}
+
+@media (max-width){
+    .main_browsing {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+@media (min-width: 768px){
     .contactMe_button{
         width: auto;
     }
+    .myServices{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 1rem;
+
+    }
+}
+
+/*-----------------------------------------------------*/
+/*CSS para servicions*/
+.myService{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.myService h3{
+    color: var(--secundario);
+    font-weight: normal;
+}
+
+.myService p{
+    line-height:2;
+    text-align: center;
+}
+
+.myService .icons {
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--primario);
+    border-radius: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
