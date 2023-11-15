@@ -12,9 +12,20 @@ html{
     font-size: 62.5%;
     box-sizing: border-box;
     background-image: linear-gradient(to right, var(--blanco)0%, var(--grisClaro)100%);
+
+    /*Scroll Snap settings*/
+    scroll-snap-type: y mandatory;
+    /*End Scroll Snap settings*/
+
     *. *:before, *:after{
         box-sizing: inherit;
     }
+}
+
+/*Scroll Snap settings (again)*/
+.title, .services-heading, .contactme-heading{
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
 }
 
 body{
@@ -191,4 +202,125 @@ main{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    margin: auto;
 }
+
+/*Contacto*/
+/*-------------------------------------------------------*/
+
+.forms{
+    background-color: var(--gris);
+    width: min(60rem, 100%);
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.forms fieldset{
+    border: none;
+}
+
+.forms legend{
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    color: var(--primario);
+}
+
+.fields-container{
+}
+
+.field{
+margin-bottom: 1rem;
+text-align: left;
+}
+
+.field label{
+    color: var(--blanco);
+    font-weight: bold;
+    margin-bottom: .5rem;
+    display: block; /* Logra que cada label tome todo el espacio disponible y estar separado del input */
+}
+
+.input-text{
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: .5rem;
+}
+
+.field textarea{
+    height: 20rem;
+    /* Hacer más grande la altura del textarea*/
+}
+
+/* Button settings */
+.SendButton{
+    background-color: var(--secundario); /* Color de fondo del botón */
+    color: var(--blanco); /* Color del texto */
+    padding: 1rem3rem; /* Espacio interior */
+    margin-top: 3rem; /* Separación superior*/
+    font-size: 2rem; /* Tamaño de la letra */
+    text-decoration: none; /* Quitar el subrayado */
+    text-transform: uppercase; /* Convertir texto en mayúsculas */
+    font-weight: bold; /* Texto en negritas */
+    border-radius: .5rem; /* Esquinas redondeadas */
+    width: 90%; /* Ancho del botón, que abarque el 90% posible si se encuentra en una pantalla pequeña */
+    text-align: center; /* Centrar el texto del botón */
+    border: none; /* Esto afecta únicamente al boton de la etiqueta "input", si esta propiedad no existe en el enlace "a" , simplemente lo ignora */
+}
+
+@media(min-width: 768px) {
+    .SendButton{
+        width: auto;
+
+    }
+}
+
+.SendButton:hover{
+    cursor: pointer;
+}
+
+ /*Utilidades */
+ .w-sm-100{
+     width: 100%;
+}
+
+@media(min-width: 768px) {
+    .w-sm-100{
+        width: auto;
+    }
+}
+
+.flex{
+    display: flex;
+}
+
+.right-aligning{
+    justify-content: flex-end;
+}
+
+/*Responsive design for contact me fields*/
+/*-------------------------------------------------------*/
+@media (min-width: 768px){
+    .fields-container{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        column-gap: 1rem;
+        grid-template-rows: auto auto 20rem; /* Darle el espacio de cada fila*/
+    }
+
+    /*We are using the nth-child() selector for selecting specific items in a group (remember: the fields that are marked using the "field" class)*/
+    /*In this case, we want to select the "email" and "message" fields, the 3rd ahd 4th items*/
+    .field:nth-child(3), .field:nth-child(4){
+        grid-column: 1/3;
+    }
+}
+
+/*Footer settings*/
+footer{
+    text-align: center;
+}
+
