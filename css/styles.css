@@ -97,7 +97,7 @@ h3, h2, h1{
     background-size:cover;
     height:450px;
     position:relative;
-    margin-botton: 2rem;
+    margin-bottom: 2rem;
 }
 
 .container-hero{
@@ -230,11 +230,11 @@ main{
 }
 
 .fields-container{
+    text-align: left;
 }
 
 .field{
 margin-bottom: 1rem;
-text-align: left;
 }
 
 .field label{
@@ -251,25 +251,33 @@ text-align: left;
     border-radius: .5rem;
 }
 
-.field textarea{
+.field .textareaClass textarea{
     height: 20rem;
     /* Hacer más grande la altura del textarea*/
+    width: 100%;
+}
+
+.textareaClass{
+    height: auto;
+    width: auto;
+    margin-bottom: 50px;
 }
 
 /* Button settings */
 .SendButton{
     background-color: var(--secundario); /* Color de fondo del botón */
     color: var(--blanco); /* Color del texto */
-    padding: 1rem3rem; /* Espacio interior */
-    margin-top: 3rem; /* Separación superior*/
+    padding: 1rem 3rem; /* Espacio interior */
+    margin-top: 3rem; /* Separación superior (this is not working >:V)*/
     font-size: 2rem; /* Tamaño de la letra */
     text-decoration: none; /* Quitar el subrayado */
     text-transform: uppercase; /* Convertir texto en mayúsculas */
     font-weight: bold; /* Texto en negritas */
     border-radius: .5rem; /* Esquinas redondeadas */
-    width: 90%; /* Ancho del botón, que abarque el 90% posible si se encuentra en una pantalla pequeña */
+    width: 90%;
     text-align: center; /* Centrar el texto del botón */
-    border: none; /* Esto afecta únicamente al boton de la etiqueta "input", si esta propiedad no existe en el enlace "a" , simplemente lo ignora */
+    border: none;
+    border-top: 3rem;
 }
 
 @media(min-width: 768px) {
@@ -309,7 +317,7 @@ text-align: left;
         display: grid;
         grid-template-columns: repeat(2,1fr);
         column-gap: 1rem;
-        grid-template-rows: auto auto 20rem; /* Darle el espacio de cada fila*/
+        grid-template-rows: auto auto 20rem; /*Space for each row*/
     }
 
     /*We are using the nth-child() selector for selecting specific items in a group (remember: the fields that are marked using the "field" class)*/
